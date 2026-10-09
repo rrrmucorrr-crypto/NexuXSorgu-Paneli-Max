@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #050609;
+    --bg-secondary: #090C12;
+    --card-surface: #10131A;
+    --card-secondary: #151923;
+    --border-color: #252A35;
+    --text-primary: #F0F2F6;
+    --text-secondary: #A0A8B7;
+    --cherry-main: #C8103D;
+    --cherry-bright: #F0204F;
+    --ice-blue: #84D9FF;
+    --silver: #C8CDD5;
+    --vip-gold: #B99A5E;
+    --success: #48C78E;
+    --warning: #E7B45A;
+    --error: #F05265;
+  }
+
+  body {
+    background-color: #050609;
+    color: #F0F2F6;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom cyber scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #090C12;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #252A35;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C8103D;
+  }
+}
+
+/* Print styling for legal / synthetic dossier exports */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

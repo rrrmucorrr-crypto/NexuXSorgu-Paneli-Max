@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=mysql://nexux_user:nexux_secret_password@mysql:3306/nexuxtanri
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_master_password
+      MYSQL_DATABASE: nexuxtanri
+      MYSQL_USER: nexux_user
+      MYSQL_PASSWORD: nexux_secret_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./database/seeds/seed.sql:/docker-entrypoint-initdb.d/02_seeds.sql
+
+volumes:
+  mysql_data:

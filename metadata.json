@@ -1,0 +1,7 @@
+{
+  "name": "NexuXTanrı 𖤟 SorguPaneli",
+  "description": "Ultra premium cyber-dark demo sorgulama ve yönetim platformu. 12 kategori, 101 sentetik sorgu modülü, anahtar yönetimi ve denetim logları.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
